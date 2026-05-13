@@ -6,6 +6,8 @@ package Equipo_7.DB;
 
 import Equipo_7.Negocio.Trabajador;
 import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -35,7 +37,7 @@ public class Database_Service {
              Statement stmt = conn.createStatement()) {
             stmt.execute(sql);
         } catch (SQLException e) {
-            System.err.println("Error al crear tabla: " + e.getMessage());
+            Logger.getLogger(Database_Service.class.getName()).log(Level.SEVERE, "Error al concectarse", e);
         }
     }
     

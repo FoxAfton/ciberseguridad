@@ -5,7 +5,6 @@
 package Equipo_7;
 
 import Equipo_7.DB.Database_Service;
-import Equipo_7.Negocio.LoggerSistema;
 import Equipo_7.Negocio.Logica_De_Negocio;
 import Equipo_7.Negocio.Trabajador;
 import Equipo_7.Negocio.ValidatorClass;
@@ -513,54 +512,13 @@ public class Form2 extends javax.swing.JFrame {
      */
     public static void main(String args[]) {
 
-    try {
+ 
 
-        for (javax.swing.UIManager.LookAndFeelInfo info :
-                javax.swing.UIManager.getInstalledLookAndFeels()) {
-
-            if ("Nimbus".equals(info.getName())) {
-
-                javax.swing.UIManager.setLookAndFeel(
-                    info.getClassName()
-                );
-
-                break;
-            }
-        }
-
-    } catch (ClassNotFoundException ex) {
-
-        LoggerSistema.guardarLog(
-            "Error ClassNotFoundException: " + ex.getMessage()
-        );
-
-    } catch (InstantiationException ex) {
-
-        LoggerSistema.guardarLog(
-            "Error InstantiationException: " + ex.getMessage()
-        );
-
-    } catch (IllegalAccessException ex) {
-
-        LoggerSistema.guardarLog(
-            "Error IllegalAccessException: " + ex.getMessage()
-        );
-
-    } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-
-        LoggerSistema.guardarLog(
-            "Error UnsupportedLookAndFeelException: "
-            + ex.getMessage()
-        );
-    }
+   
 
     java.awt.EventQueue.invokeLater(new Runnable() {
 
         public void run() {
-
-            LoggerSistema.guardarLog(
-                "Programa iniciado correctamente"
-            );
 
             new Form2().setVisible(true);
         }

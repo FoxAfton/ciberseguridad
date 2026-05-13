@@ -6,6 +6,8 @@ package Equipo_7.Negocio;
 
 import Equipo_7.DB.Database_Service;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -34,8 +36,8 @@ public class Logica_De_Negocio {
             return "Registro Exitoso";
             
         }catch (SQLException e) {
-            return "Error al Guardar:" + e.getMessage();
-            
+            Logger.getLogger(Logica_De_Negocio.class.getName()).log(Level.SEVERE, "Registro fallido", e);
+            return null;
         }
         
     }
@@ -55,7 +57,7 @@ public class Logica_De_Negocio {
         return SQLite.buscarPorId(id);
 
     } catch (SQLException e) {
-        System.err.println("Error al buscar: " + e.getMessage());
+        Logger.getLogger(Logica_De_Negocio.class.getName()).log(Level.SEVERE, "Error al buscar el id" + idTexto, e);
         return null;
     }
         
